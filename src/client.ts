@@ -413,10 +413,10 @@ export class Client extends EventEmitter {
       '<' + envelopeKey + ':Envelope ' +
       xmlnsSoap + ' ' +
       'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' +
-        +'xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"'+
-        +'xmlns:ns1="https://www.rapido.bg/testsystem/server.php"'+
-        +'xmlns:ns2="http://xml.apache.org/xml-soap"'+
-        +'xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"'+
+      'xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"'+
+      'xmlns:ns1="https://www.rapido.bg/testsystem/server.php"'+
+      'xmlns:ns2="http://xml.apache.org/xml-soap"'+
+      'xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"'+
       encoding +
       this.wsdl.xmlnsInEnvelope + '>' +
       ((decodedHeaders || this.security) ?
