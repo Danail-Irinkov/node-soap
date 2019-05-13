@@ -387,6 +387,12 @@ export class Client extends EventEmitter {
       message = this.wsdl.objectToRpcXML(name, args, alias, ns, (input.name !== 'element' ));
       (method.inputSoap === 'encoded') && (encoding = 'soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" ');
     } else {
+        console.log('GENERATING MESSAGE')
+        console.log('input.$name', input.$name)
+        console.log('args', args)
+        console.log('input.targetNSAlias', input.targetNSAlias)
+        console.log('input.$type', input.$type)
+        console.log('input.$lookupType', input.$lookupType)
       assert.ok(!style || style === 'document', 'invalid message definition for rpc style binding');
       // pass `input.$lookupType` if `input.$type` could not be found
       message = this.wsdl.objectToDocumentXML(input.$name, args, input.targetNSAlias, input.targetNamespace, (input.$type || input.$lookupType));
