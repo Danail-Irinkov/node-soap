@@ -382,7 +382,7 @@ export class Client extends EventEmitter {
 
     if ((style === 'rpc') && ( ( input.parts || input.name === 'element' ) || args === null) ) {
       assert.ok(!style || style === 'rpc', 'invalid message definition for document style binding');
-      message = this.wsdl.objectToRpcXML(name, args, alias, ns, (input.name !== 'element' ));
+      message = this.wsdl.objectToRpcXML(name, args, 'ns1', ns, (input.name !== 'element' ));
       (method.inputSoap === 'encoded') && (encoding = 'soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" ');
     } else {
       assert.ok(!style || style === 'document', 'invalid message definition for rpc style binding');
@@ -404,13 +404,14 @@ export class Client extends EventEmitter {
     xml = '<?xml version="1.0" encoding="utf-8"?>' +
       '<' + envelopeKey + ':Envelope ' +
       xmlnsSoap + ' ' +
-      'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' +
-        +'xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"'+
-        +'xmlns:ns1="https://www.rapido.bg/testsystem/server.php"'+
-        +'xmlns:ns2="http://xml.apache.org/xml-soap"'+
-        +'xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"'+
+        'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' +
+        'xmlns:ns1="https://www.rapido.bg/testsystem/server.php" ' +
+        'xmlns:ns2="http://xml.apache.org/xml-soap" ' +
+        'xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" ' +
+        'SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" ' +
       encoding +
-      this.wsdl.xmlnsInEnvelope + '>' +
+      // this.wsdl.xmlnsInEnvelope +
+        '>' +
       ((decodedHeaders || this.security) ?
         (
           '<' + envelopeKey + ':Header' + (this.wsdl.xmlnsInHeader ? (' ' + this.wsdl.xmlnsInHeader) : '') + '>' +
