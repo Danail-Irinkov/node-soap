@@ -410,7 +410,7 @@ export class Client extends EventEmitter {
         'xmlns:ns1="https://www.rapido.bg/testsystem/server.php" ' +
         'xmlns:ns2="http://xml.apache.org/xml-soap" ' +
         'xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" ' +
-        'SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" ' +
+        // 'SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" ' + //Firing Error for non Namespace qualified attribute
       encoding +
       // this.wsdl.xmlnsInEnvelope +
         '>' +
