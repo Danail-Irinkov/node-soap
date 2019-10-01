@@ -398,7 +398,7 @@ export class Client extends EventEmitter {
         } else {
           return header;
         }
-      }).join('\n');
+      }).join(' ');
     }
       // ADDED TO FIT RAPIDO SOAP API
     xml = '<?xml version="1.0" encoding="utf-8"?>' +
