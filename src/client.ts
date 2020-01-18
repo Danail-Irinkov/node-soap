@@ -406,10 +406,11 @@ export class Client extends EventEmitter {
     xml = '<?xml version="1.0" encoding="utf-8"?>' +
       '<' + envelopeKey + ':Envelope ' +
       xmlnsSoap + ' ' +
+        'xmlns:ns1="https://www.rapido.bg/rsystem2/server.php" ' +
+        'xmlns:xsd="http://www.w3.org/2001/XMLSchema" ' +
         'xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' +
-        'xmlns:ns1="https://www.rapido.bg/testsystem/server.php" ' +
-        'xmlns:ns2="http://xml.apache.org/xml-soap" ' +
         'xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" ' +
+        'xmlns:ns2="http://xml.apache.org/xml-soap" ' +
         // 'SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" ' + //Firing Error for non Namespace qualified attribute
       encoding +
       // this.wsdl.xmlnsInEnvelope +
