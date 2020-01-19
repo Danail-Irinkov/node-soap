@@ -31,7 +31,9 @@
     "test": "./test"
   },
   "scripts": {
+    "pre-commit": "lint, install, prepare",
     "prepare": "npm run build",
+    "install": "npm install",
     "build": "tsc -p .",
     "clean": "rm -rf lib",
     "watch": "tsc -w -p .",
@@ -55,6 +57,7 @@
     "@types/sax": "^1.0.1",
     "@types/uuid": "^3.4.4",
     "body-parser": "^1.15.2",
+    "pre-commit": "^1.2.2",
     "colors": "^1.3.3",
     "coveralls": "^3.0.5",
     "diff": "^4.0.1",
