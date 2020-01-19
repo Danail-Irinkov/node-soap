@@ -31,9 +31,8 @@
     "test": "./test"
   },
   "scripts": {
-    "pre-commit": "lint, install, prepare",
+    "pre-commit": "lint, prepare",
     "prepare": "npm run build",
-    "install": "npm install",
     "build": "tsc -p .",
     "clean": "rm -rf lib",
     "watch": "tsc -w -p .",
@@ -42,7 +41,7 @@
     "cover": "nyc --extension=.ts --reporter=lcov --reporter=html --reporter=text mocha --timeout 15000 --exit test/*-test.js test/security/*.js",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js -v",
     "docs": "typedoc --out docs",
-    "test": "mocha --timeout 15000 --bail --exit test/*-test.js test/security/*.js"
+    "test-off": "mocha --timeout 15000 --bail --exit test/*-test.js test/security/*.js"
   },
   "keywords": [
     "soap"
